@@ -14,7 +14,7 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    print request.data
+    # print request.data
     data = json.loads(request.data)
     base64_str = data.get('image')
     rgb_image = read_base64_image(base64_str)
