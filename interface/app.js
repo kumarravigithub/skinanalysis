@@ -9,7 +9,7 @@ http.createServer(function(req, res) {
     var form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
       var oldpath = files.filetoupload.path;
-      var newpath = '/Users/kumarravi/project/derm-ai/interface/uploaded/' + files.filetoupload.name;
+      var newpath = '~/skinanalysis/interface/uploaded/' + files.filetoupload.name;
       fs.rename(oldpath, newpath, function(err) {
         if (err) throw err;
         image2base64(newpath)
